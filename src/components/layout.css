@@ -1,0 +1,90 @@
+*{
+  margin:0;
+  padding:0;  
+}
+
+body {
+    font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+    overflow: auto;
+    height: 100vh;
+    }
+
+
+.title {
+    color: #ffa500;
+    padding-bottom: 30px;
+  }
+
+  .navbar {
+    height: 50px;
+    background-color: bisque;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+  }
+  .navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    list-style: none;
+  }
+  .navbar ul li {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .nav-item a {
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-decoration: none;
+    transition: color 0.3s ease-out;
+  }
+  .nav-item a:hover {
+    color: pink;
+  }
+
+  .contents {
+    position: relative; 
+    margin-top: 60px;
+    left: 100px;
+    z-index: 1;
+    padding-bottom: 100px;
+  }
+
+  footer {
+    color: #808080;
+    padding: 0;
+    background: #e5e5e5;
+    width: 100vw;
+    height: 60px;
+    position: fixed; 
+    bottom: 0;
+    z-index: 3;
+   }
+
+   .actno{
+    font-style: italic;
+    padding-bottom: 30px;
+    padding-left: 50px;
+   }
+
+   .stage{
+    font-style: italic;
+    padding-bottom: 20px;
+    padding-left: 20px;
+   }
+
+   .speaker{
+    font-weight: bold;
+   }
+
+   .words{
+    padding-bottom: 20px;
+   }

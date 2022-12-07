@@ -3,13 +3,10 @@ import Layout from "../components/layout"
 import { graphql } from 'gatsby'
 
 
+
 function modifyTEItoJSX(scene){
-  //let count = scene.childElementCount
+  
   let kids = scene.childNodes
-  //let ch = scene.children
-  //console.log(ch)
-  console.log(kids)
- // console.log(count)
   let jsx = ''
   for(let i = 0; i < kids.length; i++) {
     let child = kids[i]
@@ -52,18 +49,20 @@ const SamplePage = ({data}) => {
     //let jsx = modifyTEItoJSX(scene1)
     const body = doc.getElementsByTagName('tei-body')
     const divs = body[0].getElementsByTagName('tei-div')
-    //console.log(body[0].getElementsByTagName('tei-div'))
     let jsx = ''
-    
+    let act1
     for (let x = 0; x < divs.length; x++) {
-      if (divs[x].getAttribute('type') === "scene" && divs[x].getAttribute('n') === "1") {
-        //console.log(divs[x])
-        jsx += modifyTEItoJSX(divs[x])
-        //console.log(jsx)
+      if (divs[x].getAttribute('type') === "act" && divs[x].getAttribute('n') === "1") {
+        console.log(divs[x])
+        act1 = divs[x]
       }
     }
-    
-    
+    const scenes = act1.getElementsByTagName('tei-div')
+    for (let y = 0; y < scenes.length; y++){
+      if (scenes[y].getAttribute('type') === "scene" && scenes[y].getAttribute('n') === "1") {
+        jsx += modifyTEItoJSX(scenes[y])
+      }
+    }
     
     return (
         <div>
